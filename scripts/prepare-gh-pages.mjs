@@ -31,6 +31,7 @@ const configContent = `window.APP_CONFIG = {
 `;
 
 await writeFile(path.join(outputDir, 'js', 'config.js'), configContent, 'utf8');
+await writeFile(path.join(outputDir, '.nojekyll'), '', 'utf8');
 
 console.log(`[deploy] Frontend listo en .gh-pages/`);
 console.log(`[deploy] API apuntando a: ${apiBase}`);

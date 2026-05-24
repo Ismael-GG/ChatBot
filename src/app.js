@@ -40,7 +40,7 @@ app.use(
         return;
       }
 
-      callback(new Error(`Origen no permitido por CORS: ${origin}`));
+      callback(null, false);
     },
   })
 );

@@ -88,8 +88,19 @@ async function checkHealth() {
       setStatus('offline', 'Servidor no disponible');
     }
   } catch {
-    setStatus('offline', 'Sin conexión');
+    setStatus('offline', 'Backend no disponible');
   }
+}
+
+function formatFetchError(error) {
+  if (error.message === 'Failed to fetch' || error.name === 'TypeError') {
+    return (
+      'No se pudo conectar con el servidor. Verifique que el backend esté desplegado en Render ' +
+      `(${API_BASE}) y vuelva a intentar en unos segundos.`
+    );
+  }
+
+  return error.message;
 }
 
 async function sendMessage(message) {
@@ -127,7 +138,7 @@ chatForm.addEventListener('submit', async (event) => {
     appendMessage('assistant', reply);
   } catch (error) {
     loadingElement.remove();
-    appendMessage('assistant', error.message, { isError: true });
+    appendMessage('assistant', formatFetchError(error), { isError: true });
   } finally {
     setLoading(false);
     messageInput.focus();
