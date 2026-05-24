@@ -2,11 +2,15 @@
   "name": "uasd-chat-backend",
   "version": "1.0.0",
   "description": "Backend de chat RAG para asistente UASD basado en el Estatuto Orgánico",
+  "homepage": "https://ismael-gg.github.io/ChatBot/",
   "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "prepare:gh-pages": "node scripts/prepare-gh-pages.mjs",
+    "deploy:frontend": "npm run prepare:gh-pages && gh-pages -d .gh-pages",
+    "deploy": "npm run deploy:frontend"
   },
   "keywords": [
     "uasd",
@@ -21,5 +25,8 @@
     "dotenv": "^16.6.1",
     "express": "^4.22.2",
     "pdf-parse": "^2.4.5"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

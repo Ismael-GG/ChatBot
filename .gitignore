@@ -1,4 +1,6 @@
 node_modules/
 .env
+.gh-pages/
 *.log
 .DS_Store
+chatbot.rar

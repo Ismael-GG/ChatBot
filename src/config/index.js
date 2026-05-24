@@ -10,6 +10,7 @@ const projectRoot = path.resolve(__dirname, '../..');
 
 const config = {
   port: Number(process.env.PORT) || 3000,
+  frontendUrl: process.env.FRONTEND_URL || '',
   gemini: {
     apiKey: process.env.GEMINI_API_KEY,
     model: process.env.GEMINI_MODEL || 'gemini-2.5-flash',

@@ -1,4 +1,4 @@
-const API_BASE = window.location.origin;
+const API_BASE = (window.APP_CONFIG?.apiBase || window.location.origin).replace(/\/$/, '');
 
 const chatContainer = document.getElementById('chatContainer');
 const chatForm = document.getElementById('chatForm');

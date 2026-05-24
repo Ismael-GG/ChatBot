@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: uasd-chat-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
+      - key: FRONTEND_URL
+        value: https://ismael-gg.github.io
+      - key: GEMINI_API_KEY
+        sync: false
