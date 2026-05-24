@@ -1,0 +1,25 @@
+{
+  "name": "uasd-chat-backend",
+  "version": "1.0.0",
+  "description": "Backend de chat RAG para asistente UASD basado en el Estatuto Orgánico",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "uasd",
+    "express",
+    "gemini",
+    "chat"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.6.1",
+    "express": "^4.22.2",
+    "pdf-parse": "^2.4.5"
+  }
+}
